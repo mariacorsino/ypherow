@@ -2,120 +2,133 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YpHeroW.ai</title>
     <meta name="google-site-verification" content="TK9kMJtPB0D58p_iiV2zznH7ZuK6tCFKPHv6nNZHjkg" />
+    
     <!-- Configuração para Redes Sociais e WhatsApp -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mariacorsino.github.io/ypherow/>
-<meta property="og:title" content="YpHeroW.ai">
-<meta property="og:description" content=" Site de uma empresa  voltada para automação e otimizaçao de processos">
-<meta property="og:image" content="https://github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mariacorsino.github.io/ypherow/">
+    <meta property="og:title" content="YpHeroW.ai">
+    <meta property="og:description" content="Site de uma empresa voltada para automação e otimização de processos">
+    <meta property="og:image" content="https://github.io">
+    <meta name="twitter:card" content="summary_large_image">
 
-<!-- Configuração extra para o Twitter/X se necessário -->
-<meta name="twitter:card" content="summary_large_image">
-
-    <!-- Link para o arquivo de estilos CSS -->
     <link rel="stylesheet" href="style.css?v=1">
-    <!-- Fonte moderna do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+
+    <style>
+        /* Estilos da Janela Flutuante de Serviços */
+        .modal-servicos {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9999;
+            justify-content: center; align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: #fff; padding: 30px; border-radius: 12px;
+            max-width: 800px; width: 90%; max-height: 85vh; overflow-y: auto;
+            position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: #111; font-family: 'Inter', sans-serif;
+        }
+        .close-btn {
+            position: absolute; top: 15px; right: 20px;
+            font-size: 24px; cursor: pointer; color: #666; font-weight: bold;
+        }
+        .grid-servicos {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 20px;
+        }
+        .card-servico {
+            padding: 20px; border: 1px solid #eaeaea; border-radius: 8px; background: #f9f9f9;
+        }
+        .card-servico h3 { font-size: 1.1rem; margin-bottom: 8px; color: #111; }
+        .card-servico p { font-size: 0.88rem; color: #555; line-height: 1.5; }
+    </style>
 </head>
 <body>
 
     <!-- CABEÇALHO -->
-    <header>
-        <div class="logo"> YpHeroW<span>.ai</span></div>
-        <nav>
-            <a href="#servicos">Serviços</a>
-            <a href="#como-funciona">Como Funciona</a>
-            <a href="#contato" class="btn-nav">Agendar Diagnóstico</a>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; position: absolute; width: 100%; box-sizing: border-box; z-index: 10;">
+        <div class="logo" style="font-weight: 800; font-size: 1.5rem; color: #fff;">YpHeroW<span style="color: #ffaa00;">.ai</span></div>
+        <nav style="display: flex; align-items: center; gap: 30px;">
+            <!-- O botão de serviço agora chama a função para abrir a janela -->
+            <a href="#" onclick="abrirServicos(event)" style="color: #fff; text-decoration: none; font-weight: 600;">Serviços</a>
+            <a href="#como-funciona" style="color: #fff; text-decoration: none; font-weight: 600;">Como Funciona</a>
+            <a href="#" style="background: #198754; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">Agendar Diagnóstico</a>
         </nav>
     </header>
 
-  <!-- HERO SECTION (TOPO DO SITE COM VÍDEO OTIMIZADO) -->
-<section class="hero">
-    <!-- Removemos o atributo poster daqui para o CSS gerenciar a transição suave -->
-    <video autoplay loop muted playsinline class="video-bg">
-        <source src="terra.mp4" type="video/mp4">
-    </video>
-    
-    <div class="overlay"></div>
+    <!-- TELA PRINCIPAL (HERO) -->
+    <section style="background: url('https://github.io') no-repeat center center/cover; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; position: relative; color: #fff;">
+        <!-- Camada escura para dar contraste ao texto -->
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); z-index: 1;"></div>
+        
+        <div style="position: relative; z-index: 2; max-width: 800px; margin-top: 60px;">
+            <h1 style="font-size: 3rem; font-weight: 800; line-height: 1.3; margin-bottom: 20px;">
+                Elimine tarefas manuais e otimize seus processos <span style="color: #ffaa00;">para escalar suas vendas com automação</span>
+            </h1>
+            <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 30px; line-height: 1.6;">
+                Conectamos seu WhatsApp, CRM, e-mails e planilhas para sua equipe focar apenas no que gera faturamento.
+            </p>
+            <a href="#" style="background: #198754; color: #fff; padding: 15px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block;">
+                Agendar Diagnóstico Gratuito
+            </a>
+        </div>
+    </section>
 
-    <div class="hero-content">
-        <h1>Elimine tarefas manuais e otimize seus processos <span>para escalar suas vendas</span> com automação</h1>
-        <p>Conectamos seu WhatsApp, CRM, e-mails e planilhas para sua equipe focar apenas no que gera faturamento.</p>
-        
-        <a href="https://wa.me/5531992516361?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20de%20automação." target="_blank" class="btn-cta">
-            Agendar Diagnóstico Gratuito
-        </a>
-    </div>
-<!-- SEÇÃO DE SERVIÇOS & SOLUÇÕES -->
-<section id="servicos" style="padding: 60px 20px; font-family: 'Inter', sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2.5rem; color: #111; margin-bottom: 10px;">Soluções em Automação Inteligente</h2>
-        <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto 50px;">
-            Desenvolvimento de ecossistemas tecnológicos integrados focados em eficiência energética, eliminação de gargalos e redução real de horas de trabalho manual (HXH).
-        </p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: left;">
+    <!-- JANELA FLUTUANTE DE SERVIÇOS (MODAL) -->
+    <div id="modalServicos" class="modal-servicos" onclick="fecharServicosExterno(event)">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharServicos()">&times;</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 5px; color: #111;">Soluções em Automação Inteligente</h2>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Clique no X para fechar e voltar à tela inicial.</p>
             
-            <!-- CARD 1 -->
-            <div style="padding: 30px; border: 1px solid #eaeaea; border-radius: 8px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-size: 1.5rem; margin-bottom: 15px;">⚙️</div>
-                <h3 style="font-size: 1.3rem; color: #111; margin-bottom: 12px;">Automação de Processos & Power Automate</h3>
-                <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">
-                    Modelagem e implementação de fluxos de trabalho digitais inteligentes. Especialista na criação de checklists móveis corporativos (como o App PREVER) dedicados a mitigar o erro humano, centralizar auditorias e otimizar rotinas operacionais no chão de fábrica ou no administrativo.
-                </p>
+            <div class="grid-servicos">
+                <div class="card-servico">
+                    <h3>⚙️ Automação & Power Automate</h3>
+                    <p>Modelagem de fluxos digitais e checklists inteligentes (como o App PREVER). Foco em mitigar erros operacionais e reduzir horas manuais (HXH).</p>
+                </div>
+                <div class="card-servico">
+                    <h3>📊 Integração SAP, Oracle & BI</h3>
+                    <p>Conexão robusta entre ferramentas de gestão integrada (SAP TM/ECC, SD, Oracle) e construção de painéis de BI para decisões em tempo real.</p>
+                </div>
+                <div class="card-servico">
+                    <h3>💻 Hardware + Software (Back-end)</h3>
+                    <p>Manutenção de firmwares, parametrização de redes móveis/GPRS/Satelitais e desenvolvimento arquitetural de back-end integrado a dispositivos ativos.</p>
+                </div>
+                <div class="card-servico">
+                    <h3>🛡️ Gestão de Acessos & Confiabilidade</h3>
+                    <p>Controle rigoroso de segurança industrial e laudos de confiabilidade. Atuação em Gestão de Identidades corporativas (IAM) alinhada a auditorias.</p>
+                </div>
             </div>
-
-            <!-- CARD 2 -->
-            <div style="padding: 30px; border: 1px solid #eaeaea; border-radius: 8px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-size: 1.5rem; margin-bottom: 15px;">📊</div>
-                <h3 style="font-size: 1.3rem; color: #111; margin-bottom: 12px;">Integração SAP, Oracle & Inteligência de Dados</h3>
-                <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">
-                    Conexão robusta entre ferramentas de gestão integrada de grandes corporações (SAP TM/ECC, SD, Oracle e sistemas TMS). Estruturação e refinamento de painéis de Business Intelligence (BI) para auditoria e tomada de decisão estratégica em tempo real pela liderança de campo.
-                </p>
-            </div>
-
-            <!-- CARD 3 -->
-            <div style="padding: 30px; border: 1px solid #eaeaea; border-radius: 8px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-size: 1.5rem; margin-bottom: 15px;">💻</div>
-                <h3 style="font-size: 1.3rem; color: #111; margin-bottom: 12px;">Sinergia Hardware + Software (Back-end)</h3>
-                <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">
-                    Domínio de ponta a ponta na infraestrutura de hardware e sistemas. Atuação completa em reparo de circuitos, parametrização de firmwares, comunicação em redes móveis/GPRS/Satelitais e desenvolvimento arquitetural de back-end integrado a dispositivos e rastreamento de ativos.
-                </p>
-            </div>
-
-            <!-- CARD 4 -->
-            <div style="padding: 30px; border: 1px solid #eaeaea; border-radius: 8px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-size: 1.5rem; margin-bottom: 15px;">🛡️</div>
-                <h3 style="font-size: 1.3rem; color: #111; margin-bottom: 12px;">Gestão de Acessos & Confiabilidade Operacional</h3>
-                <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">
-                    Vasta bagagem no controle rigoroso de segurança em grandes ambientes industriais. Desenvolvimento de laudos técnicos de engenharia de confiabilidade e atuação estratégica em Gestão de Identidades e Acessos corporativos (IAM) em conformidade com auditorias internas e externas.
-                </p>
-            </div>
-
         </div>
     </div>
-</section>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <p>&copy; 2026 YpHeroW. Todos os direitos reservados.</p>
+    <!-- RODAPÉ CORRIGIDO (FICA NO FINAL DA PÁGINA) -->
+    <footer style="background: #0b0f19; color: #888; text-align: center; padding: 25px 20px; font-size: 0.9rem; font-family: 'Inter', sans-serif;">
+        &copy; 2026 YpHeroW. Todos os direitos reservados.
     </footer>
-    
-    <!-- ... restante do seu código anterior ... -->
 
-    <!-- SEU NOVO SCRIPT PARA SUAVIZAR A TRANSIÇÃO -->
+    <!-- SCRIPT PARA CONTROLAR A JANELA FLUTUANTE -->
     <script>
-        const video = document.querySelector('.video-bg');
-        const hero = document.querySelector('.hero');
-
-        // Quando o vídeo tiver dados suficientes para rodar sem travar
-        video.addEventListener('canplaythrough', () => {
-            // Adiciona uma classe no Hero para sumir com a imagem de fundo suavemente
-            hero.classList.add('video-ready');
-        });
+        function abrirServicos(e) {
+            e.preventDefault();
+            document.getElementById('modalServicos').style.display = 'flex';
+        }
+        function fecharServicos() {
+            document.getElementById('modalServicos').style.display = 'none';
+        }
+        function fecharServicosExterno(e) {
+            if (e.target.id === 'modalServicos') {
+                fecharServicos();
+            }
+        }
     </script>
 
 </body>
 </html>
+
