@@ -1,0 +1,218 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    /* Fundo escuro limpo para o site geral */
+    background-color: #0d1117;
+    color: #f0f6fc;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    border-bottom: 1px solid #30363d;
+    background-color: rgba(13, 17, 23, 0.85); /* Efeito semi-transparente elegante */
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #ff7a00; /* Identidade Laranja */
+}
+
+nav a {
+    color: #8b949e;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+.btn-nav {
+    background-color: #238636;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+/* HERO SECTION COM TRANSIÇÃO SUAVE */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    
+    /* Colocamos a imagem diretamente aqui. Ela aparece INSTANTANEAMENTE */
+    background-image: linear-gradient(rgba(13, 17, 23, 0.4), rgba(13, 17, 23, 0.85)), url('background-tech.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1.2s ease-in-out; /* O efeito de redução/suavização da imagem */
+}
+
+/* Quando o JavaScript avisar que o vídeo está pronto, removemos a imagem de fundo com suavidade */
+.hero.video-ready {
+    background-image: linear-gradient(rgba(13, 17, 23, 0), rgba(13, 17, 23, 0)), url('');
+}
+
+/* Ajuste no vídeo para ele começar invisível e aparecer no fade */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, 0);
+    object-fit: cover;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 1.2s ease-in-out; /* Efeito fade-in do vídeo da Terra */
+}
+
+/* Quando o vídeo estiver pronto, ele ganha opacidade total suavemente */
+.hero.video-ready .video-bg {
+    opacity: 1;
+}
+/* Camada escura com degradê suave para ajustar a iluminação do vídeo */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ajustado: Menos opacidade no topo (0.2) para revelar o brilho da atmosfera,
+       centro bem limpo (0.4) e base mais suave (0.85) para deixar a luz passar embaixo */
+    background: linear-gradient(
+        to bottom, 
+        rgba(13, 17, 23, 0.2) 0%, 
+        rgba(13, 17, 23, 0.4) 40%, 
+        rgba(13, 17, 23, 0.85) 100%
+    );
+    z-index: 2;
+}
+/* Garante que os textos e o botão fiquem acima do vídeo e da overlay */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #ff7a00; /* Identidade Laranja */
+}
+
+.hero p {
+    font-size: 18px;
+    color: #c9d1d9;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    background-color: #238636;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #2ea043;
+    transform: scale(1.05);
+}
+
+/* CARDS DE SERVIÇOS COM IMAGEM ESTÁTICA DISCRETA */
+.servicos {
+    padding: 90px 8%;
+    /* Aplica os hexágonos com uma máscara escura para não poluir os textos */
+    background-image: linear-gradient(rgba(13, 17, 23, 0.88), rgba(13, 17, 23, 0.95)), url('background-tech.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 4;
+}
+
+.servicos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    /* Fundo levemente translúcido para dar profundidade com o fundo tech */
+    background-color: rgba(22, 27, 34, 0.8);
+    backdrop-filter: blur(6px);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #ff7a00; /* Borda acende em laranja ao passar o mouse */
+    transform: translateY(-5px);
+    background-color: rgba(22, 27, 34, 0.95);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #ff7a00; /* Identidade Laranja */
+}
+
+.card p {
+    color: #8b949e;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 14px;
+    background-color: #0d1117;
+    position: relative;
+    z-index: 4;
+}

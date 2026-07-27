@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="d5A1eUEf6sHKQ6uyTA911L1mdnxlAmoefrVc1wVAf6U" />
+    <title>Orange Automation | Automações Inteligentes de Processos</title>
+    <!-- Link para o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css?v=1">
+    <!-- Fonte moderna do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo"> Orange Automation<span>.ai</span></div>
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#como-funciona">Como Funciona</a>
+            <a href="#contato" class="btn-nav">Agendar Diagnóstico</a>
+        </nav>
+    </header>
+
+  <!-- HERO SECTION (TOPO DO SITE COM VÍDEO OTIMIZADO) -->
+<section class="hero">
+    <!-- Removemos o atributo poster daqui para o CSS gerenciar a transição suave -->
+    <video autoplay loop muted playsinline class="video-bg">
+        <source src="terra.mp4" type="video/mp4">
+    </video>
+    
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>Elimine tarefas manuais e otimize seus processos <span>para escalar suas vendas</span> com automação</h1>
+        <p>Conectamos seu WhatsApp, CRM, e-mails e planilhas para sua equipe focar apenas no que gera faturamento.</p>
+        
+        <a href="https://wa.me/5531992516361?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20de%20automação." target="_blank" class="btn-cta">
+            Agendar Diagnóstico Gratuito
+        </a>
+    </div>
+</section>
+    <!-- SEÇÃO DE SERVIÇOS -->
+    <section id="servicos" class="servicos">
+        <h2>O que automatizamos na sua empresa</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Vendas & CRM</h3>
+                <p>Captura automática de leads de formulários ou anúncios direto para seu CRM com mensagem instantânea no WhatsApp.</p>
+            </div>
+            <div class="card">
+                <h3>Agendamento Automático</h3>
+                <p>O cliente escolhe o melhor horário, a reunião entra no seu Google Meet e o sistema dispara lembretes para evitar faltas.</p>
+            </div>
+            <div class="card">
+                <h3>Notificações & Gestão</h3>
+                <p>Alertas de vendas no Slack, emissão automática de notas fiscais e sincronização de dados com planilhas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 Orange Automation. Todos os direitos reservados.</p>
+    </footer>
+    
+    <!-- ... restante do seu código anterior ... -->
+
+    <!-- SEU NOVO SCRIPT PARA SUAVIZAR A TRANSIÇÃO -->
+    <script>
+        const video = document.querySelector('.video-bg');
+        const hero = document.querySelector('.hero');
+
+        // Quando o vídeo tiver dados suficientes para rodar sem travar
+        video.addEventListener('canplaythrough', () => {
+            // Adiciona uma classe no Hero para sumir com a imagem de fundo suavemente
+            hero.classList.add('video-ready');
+        });
+    </script>
+
+</body>
+</html>
