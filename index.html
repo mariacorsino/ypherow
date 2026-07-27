@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YpHeroW.ai</title>
     
-    <!-- Tag de Verificação do Google Search Console -->
+    <!-- Otimizações e Metatags Obrigatórias -->
     <meta name="google-site-verification" content="TK9kMJtPB0D58p_iiV2zznH7ZuK6tCFKPHv6nNZHjkg" />
-    
-    <!-- Configuração de Compartilhamento para o WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.io">
     <meta property="og:title" content="YpHeroW.ai | Automações Inteligentes">
@@ -16,143 +14,169 @@
     <meta property="og:image" content="https://github.iologo.png">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Fontes Premium -->
     <link rel="preconnect" href="https://googleapis.com">
     <link href="https://googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        /* RESET PADRÃO INTEGRADO */
+        /* 1. RESET E FUNDO COM GRADIENTE DINÂMICO PREMIUM */
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
             font-family: 'Inter', sans-serif; background-color: #02040a;
             overflow-x: hidden; color: #fff; scroll-behavior: smooth;
         }
 
-        /* EFEITO DEGRADÊ SUTIL NO FUNDO GLOBAL DA PÁGINA */
         .page-wrapper {
-            background: radial-gradient(circle at 50% 30%, #0d1527 0%, #040814 60%, #02040a 100%);
+            /* Degradê sofisticado simulando uma nebulosa espacial ao fundo */
+            background: radial-gradient(circle at 50% 45%, #0a142c 0%, #030611 60%, #02040a 100%);
             width: 100%; min-height: 100vh; display: flex; flex-direction: column;
         }
 
-        /* COMPOSIÇÃO DA ÁREA CENTRAL (HERO) */
+        /* 2. ESTRUTURA DA SEÇÃO PRINCIPAL (CENÁRIO DA TERRA) */
         .hero-section {
             position: relative; width: 100%; min-height: 95vh;
             display: flex; justify-content: center; align-items: center;
             box-sizing: border-box; padding: 100px 20px 40px;
         }
 
-        /* ESFERA DA TERRA CENTRALIZADA NO MEIO EXATO */
+        /* 3. ARQUITETURA AVANÇADA DA ESFERA 3D DA TERRA */
         .earth-sphere-wrapper {
             position: relative;
-            width: 480px; height: 480px; /* Diâmetro imponente */
+            width: 540px; height: 540px; 
             border-radius: 50%; overflow: hidden;
-            box-shadow: 0 0 70px rgba(30, 64, 175, 0.4), inset 0 0 40px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            /* Combinação de sombras externas e internas simulando a atmosfera do planeta */
+            box-shadow: 
+                0 0 60px rgba(63, 137, 255, 0.25), 
+                inset 0 0 50px rgba(0,0,0,1),
+                0 0 100px rgba(30, 64, 175, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             display: flex; justify-content: center; align-items: center;
+            background: #02040a;
         }
 
+        /* Força o vídeo a ocupar a esfera sem quebras ou distorções */
         .video-earth {
-            width: 100%; height: 100%; object-fit: cover; transform: scale(1.05);
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; object-fit: cover;
+            z-index: 1; transform: scale(1.02);
         }
 
-        /* PONTO LUMINOSO (ESTRELA) NO CANTO ESQUERDO DA TERRA */
+        /* 4. MÁSCARA INTELIGENTE DE CONTRASTE (CINEMATIC OVERLAY) */
+        .earth-inner-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            /* Camada sutil para o texto saltar aos olhos sem apagar os detalhes do vídeo */
+            background: radial-gradient(circle, rgba(2,4,10,0.3) 0%, rgba(2,4,10,0.6) 80%);
+            z-index: 2;
+        }
+
+        /* 5. ENGENHARIA DO PONTO LUMINOSO (ESTRELA PULSANTE EM CSS) */
         .earth-star-glow {
             position: absolute;
-            top: 25%; left: 8%; /* Coordenada exata no canto esquerdo da circunferência */
+            top: 30%; left: 6%; /* Localização precisa no horizonte esquerdo do planeta */
             width: 12px; height: 12px;
             background: #ffffff; border-radius: 50%; z-index: 5;
-            box-shadow: 0 0 20px 6px #ffffff, 0 0 40px 12px rgba(63, 137, 255, 0.8);
-            animation: pulseGlow 3s infinite ease-in-out;
+            /* Duplo efeito de brilho neon (Glow Effect) */
+            box-shadow: 0 0 25px 6px #ffffff, 0 0 50px 12px rgba(63, 137, 255, 0.9);
+            animation: pulseGlow 2.5s infinite ease-in-out;
         }
 
         @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 25px 8px #ffffff, 0 0 50px 16px rgba(63, 137, 255, 0.9); }
+            0%, 100% { transform: scale(1); opacity: 0.8; filter: brightness(1); }
+            50% { transform: scale(1.25); opacity: 1; filter: brightness(1.4); box-shadow: 0 0 35px 10px #ffffff, 0 0 65px 18px rgba(63, 137, 255, 1); }
         }
 
-        /* MÁSCARA ESCURA INTERNA PARA DAR LEITURA À MENSAGEM */
-        .earth-inner-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(2, 4, 10, 0.55); z-index: 2;
-        }
-
-        /* MENSAGEM DIRETA APLICADA NO CENTRO (SOBRE A TERRA) */
+        /* 6. MENSAGEM IMPACTANTE CENTRALIZADA */
         .center-message-box {
-            position: absolute; z-index: 4; max-width: 420px;
-            padding: 0 20px; box-sizing: border-box; text-align: center;
+            position: absolute; z-index: 4; max-width: 450px;
+            padding: 0 25px; box-sizing: border-box; text-align: center;
         }
 
         .center-message-box h1 {
-            font-size: 1.8rem; font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 15px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+            font-size: 2.1rem; font-weight: 800; color: #fff; line-height: 1.35; margin-bottom: 12px;
+            text-shadow: 0 4px 20px rgba(0,0,0,1), 0 2px 5px rgba(0,0,0,0.8);
+            letter-spacing: -0.5px;
         }
 
         .center-message-box h1 span { color: #ffaa00; }
 
         .center-message-box p {
-            font-size: 0.95rem; color: #d1d5db; line-height: 1.5; margin: 0 auto 25px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            font-size: 1.05rem; color: #e5e7eb; line-height: 1.55; margin: 0 auto 30px;
+            text-shadow: 0 2px 10px rgba(0,0,0,1);
         }
 
-        /* BOTÃO DE CONTATO CENTRALIZADO */
+        /* 7. BOTÃO PREMIUM COM TRANSIÇÃO SUAVE */
         .btn-green {
-            background-color: #198754; color: #fff; padding: 12px 28px;
-            border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem;
-            display: inline-block; transition: all 0.2s; border: none; cursor: pointer;
-            box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);
+            background-color: #198754; color: #fff; padding: 14px 34px;
+            border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem;
+            display: inline-block; border: none; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(25, 135, 84, 0.4);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* Curva de animação profissional */
         }
-        .btn-green:hover { background-color: #157347; transform: translateY(-1px); }
+        .btn-green:hover { 
+            background-color: #157347; 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 25px rgba(25, 135, 84, 0.6); 
+        }
 
-        /* IMAGEM DO CABEÇALHO (HEXÁGONOS AZUIS) APLICADA ABAIXO, QUASE NO RODAPÉ */
+        /* 8. SEÇÃO DO PRE-RODAPÉ (INTEGRAÇÃO DA IMAGEM HEXAGONAL) */
         .pre-footer-tech {
-            position: relative; width: 100%; padding: 80px 20px;
+            position: relative; width: 100%; padding: 110px 20px;
             background: url('background-tech.png') no-repeat center center;
             background-size: cover; text-align: center; box-sizing: border-box;
             display: flex; justify-content: center; align-items: center;
+            border-top: 1px solid rgba(63, 98, 255, 0.1);
         }
 
+        /* Efeito de sobreposição em degradê para mesclar a imagem perfeitamente ao fundo preto */
         .tech-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, #02040a 0%, rgba(2,4,10,0.6) 50%, #050811 100%);
+            background: linear-gradient(180deg, #02040a 0%, rgba(2,4,10,0.65) 50%, #050811 100%);
             z-index: 1;
         }
 
-        .tech-content {
-            position: relative; z-index: 2; max-width: 600px;
-        }
+        .tech-content { position: relative; z-index: 2; max-width: 650px; }
+        .tech-content h2 { font-size: 2.1rem; font-weight: 800; margin-bottom: 10px; color: #fff; letter-spacing: -0.5px; }
+        .tech-content p { font-size: 1.05rem; color: #9ca3af; margin: 0; line-height: 1.6; }
 
-        .tech-content h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; color: #fff; }
-        .tech-content p { font-size: 0.95rem; color: #9ca3af; margin: 0; line-height: 1.5; }
-
-        /* JANELA FLUTUANTE DE SERVIÇOS */
+        /* 9. JANELA FLUTUANTE ULTRA-MODERNA (GLASSMORPHISM) */
         .modal-servicos {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center;
-            backdrop-filter: blur(8px);
+            background: rgba(1, 2, 6, 0.8); z-index: 9999; justify-content: center; align-items: center;
+            backdrop-filter: blur(12px); /* Desfoque de cinema no fundo */
+            transition: all 0.3s ease;
         }
         
         .modal-content {
-            position: relative; padding: 40px; border-radius: 16px; max-width: 850px; width: 90%;
+            position: relative; padding: 45px; border-radius: 16px; max-width: 850px; width: 90%;
             max-height: 85vh; overflow-y: auto; text-align: left;
             background: url('background-tech.png') no-repeat center center; background-size: cover;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 1px solid rgba(63, 98, 255, 0.2);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.9); border: 1px solid rgba(63, 98, 255, 0.25);
         }
 
         .modal-content-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 15, 25, 0.95); z-index: 1; border-radius: 16px;
+            background: rgba(7, 10, 19, 0.94); z-index: 1; border-radius: 16px;
         }
 
         .modal-body-wrapper { position: relative; z-index: 2; }
-        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 32px; cursor: pointer; color: #9ca3af; font-weight: bold; }
+        .close-btn { position: absolute; top: 18px; right: 22px; font-size: 34px; cursor: pointer; color: #9ca3af; font-weight: bold; transition: color 0.2s; }
         .close-btn:hover { color: #fff; }
+        
         .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 30px; }
-        .card-servico { padding: 22px; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(4px); }
+        
+        /* Estilo transparente espelhado nos cards de habilidades */
+        .card-servico { 
+            padding: 24px; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; 
+            background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(8px);
+            transition: border 0.3s;
+        }
+        .card-servico:hover { border-color: rgba(63, 98, 255, 0.4); }
         .card-servico h3 { font-size: 1.15rem; margin-top: 0; margin-bottom: 10px; color: #ffaa00; font-weight: 600; }
-        .card-servico p { font-size: 0.9rem; color: #d1d5db; line-height: 1.5; margin: 0; }
+        .card-servico p { font-size: 0.9rem; color: #d1d5db; line-height: 1.55; margin: 0; }
 
         footer {
             background-color: #050811; color: #525866; text-align: center;
-            padding: 22px 20px; font-size: 0.85rem; width: 100%; box-sizing: border-box; position: relative; z-index: 3;
+            padding: 25px 20px; font-size: 0.85rem; width: 100%; box-sizing: border-box; position: relative; z-index: 3;
             border-top: 1px solid rgba(255,255,255,0.03);
         }
     </style>
@@ -161,43 +185,15 @@
 
     <div class="page-wrapper">
 
-        <!-- CABEÇALHO -->
+        <!-- CABEÇALHO DA NAVEGAÇÃO -->
         <header style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; position: absolute; width: 100%; box-sizing: border-box; z-index: 10;">
-            <div style="font-weight: 800; font-size: 1.5rem; color: #fff;">YpHeroW<span style="color: #ffaa00;">.ai</span></div>
-            <nav style="display: flex; align-items: center; gap: 30px;">
-                <a href="#" onclick="abrirServicos(event)" style="color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Serviços</a>
-                <a href="#como-funciona" style="color: #b3b9c9; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Como Funciona</a>
-                <a href="https://wa.me" class="btn-green" style="padding: 10px 18px; font-size: 0.9rem;">Agendar Diagnóstico</a>
+            <div style="font-weight: 800; font-size: 1.5rem; color: #fff; letter-spacing: -0.5px;">YpHeroW<span style="color: #ffaa00;">.ai</span></div>
+            <nav style="display: flex; align-items: center; gap: 35px;">
+                <a href="#" onclick="abrirServicos(event)" style="color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: opacity 0.2s;">Serviços</a>
+                <a href="#como-funciona" style="color: #b3b9c9; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: opacity 0.2s;">Como Funciona</a>
+                <a href="https://wa.me" class="btn-green" style="padding: 10px 20px; font-size: 0.9rem;">Agendar Diagnóstico</a>
             </nav>
         </header>
 
-        <!-- SEÇÃO HERO COM A TERRA CENTRALIZADA E MENSAGEM POR CIMA -->
-        <section class="hero-section">
-            
-            <div class="earth-sphere-wrapper">
-                <!-- Estrela com brilho pulsante no canto esquerdo -->
-                <div class="earth-star-glow"></div>
-                
-                <!-- Máscara de legibilidade interna -->
-                <div class="earth-inner-overlay"></div>
-                
-                <!-- Vídeo em loop contínuo -->
-                <video class="video-earth" autoplay loop muted playsinline>
-                    <source src="https://github.ioterra.mp4" type="video/mp4">
-                </video>
+        <!-- SEÇÃO CENTRAL (VÍDEO DA TERRA LOCAL + INTERFACE PROFISSIONAL) -->
 
-                <!-- MENSAGEM DIRETA APLICADA NO CENTRO DO VÍDEO -->
-                <div class="center-message-box">
-                    <h1>Otimize seus processos <span>para escalar vendas</span></h1>
-                    <p>Conectamos seu ecossistema para eliminar tarefas manuais e focar no faturamento.</p>
-                    <a href="https://wa.me" class="btn-green">Iniciar Automação</a>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- IMAGEM DE CABEÇALHO/HEXÁGONOS APLICADA DISCRETAMENTE ABAIXO -->
-        <section class="pre-footer-tech">
-            <div class="tech-overlay"></div>
-            <div class="tech-content">
-                <h2>Eficiência Global Integrada</h2>
