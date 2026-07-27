@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YpHeroW.ai</title>
+    <title>YpHeroW.ai | Automações Inteligentes</title>
     
-    <!-- Otimizações e Metatags Obrigatórias -->
+    <!-- SEO & Meta Tags -->
     <meta name="google-site-verification" content="TK9kMJtPB0D58p_iiV2zznH7ZuK6tCFKPHv6nNZHjkg" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.io">
     <meta property="og:title" content="YpHeroW.ai | Automações Inteligentes">
     <meta property="og:description" content="Elimine tarefas manuais e otimize seus processos para escalar suas vendas com automação.">
-    <meta property="og:image" content="https://iologo.png">
+    <meta property="og:image" content="logo.png">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Fontes Premium -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tipografia Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         /* RESET E CONFIGURAÇÕES BASE */
@@ -27,310 +27,434 @@
             padding: 0;
         }
 
-        body, html {
-            width: 100%;
-            height: 100%;
-            font-family: 'Inter', sans-serif;
-            background-color: #02040a;
-            color: #fff;
-            overflow-x: hidden;
+        html {
             scroll-behavior: smooth;
         }
 
-        /* ESCAPE CÓSMICO: FUNDO COM NEBULOSA PRATEADA SUTIL */
-        .page-wrapper {
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* CONTAINER PRINCIPAL / HERO COM VÍDEO DA TERRA DE FUNDO */
+        .hero-wrapper {
             position: relative;
             width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(148, 163, 184, 0.04) 0%, transparent 45%),
-                radial-gradient(circle at 80% 70%, rgba(203, 213, 225, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, #061026 0%, #030611 60%, #02040a 100%);
-            background-image: url('background'), radial-gradient(circle at 50% 50%, #061026 0%, #02040a 100%);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            justify-content: space-between;
+            align-items: center;
+            /* Fundo fallback com background-tech */
+            background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.6) 0%, #030712 100%),
+                        url('background-tech.png') center/cover no-repeat;
+            overflow: hidden;
         }
 
-        /* CABEÇALHO DA NAVEGAÇÃO */
-        header {
+        /* VÍDEO DA TERRA COMO PLANO DE FUNDO GIGANTE */
+        .video-bg-earth {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 140vw;
+            height: 140vh;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -35%) scale(1.1);
+            object-fit: cover;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.85;
+            filter: contrast(1.1) brightness(0.9);
+        }
+
+        /* MÁSCARA ESCURA PARA DAR LEITURA AO TEXTO SOBRE A TERRA */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1300px;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(3, 7, 18, 0.3) 0%, rgba(3, 7, 18, 0.85) 75%, #030712 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* CABEÇALHO (NAVBAR) */
+        header {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1280px;
             margin: 0 auto;
+            padding: 30px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 40px;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: #fff;
-            letter-spacing: -0.5px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
 
-        .logo span {
-            color: #ffaa00;
+        .logo-img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: #ff6b00; /* Laranja da OrangeAutomation / YpHeroW */
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 35px;
+            gap: 32px;
         }
 
         nav a {
-            color: #b3b9c9;
+            color: #cbd5e1;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 0.95rem;
             transition: color 0.2s ease;
         }
 
         nav a:hover {
-            color: #fff;
+            color: #ffffff;
         }
 
-        /* BOTÕES ESTILO PREMIUM */
+        /* BOTÃO VERDE (ESTILO EXATO DA IMAGEM) */
         .btn-green {
-            background-color: #198754;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 6px;
+            background-color: #16a34a;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-block;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+            transition: all 0.25s ease;
         }
 
-        .btn-green:hover { 
-            background-color: #157347; 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 20px rgba(25, 135, 84, 0.5); 
+        .btn-green:hover {
+            background-color: #15803d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.5);
         }
 
         .btn-large {
-            padding: 14px 34px;
-            font-size: 1rem;
-            box-shadow: 0 4px 20px rgba(25, 135, 84, 0.4);
+            padding: 16px 36px;
+            font-size: 1.05rem;
+            border-radius: 8px;
         }
 
-        /* SEÇÃO CENTRAL DO HERO */
-        .hero-section {
+        /* CONTEÚDO CENTRAL DO HERO */
+        .hero-content {
             position: relative;
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 120px 20px 40px;
-        }
-
-        /* ESTRUTURA IDÊNTICA DA ESFERA DA TERRA */
-        .earth-sphere-wrapper {
-            position: relative;
-            width: 540px;
-            height: 540px; 
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 
-                0 0 60px rgba(63, 137, 255, 0.25), 
-                inset 0 0 50px rgba(0,0,0,1),
-                0 0 100px rgba(30, 64, 175, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #02040a;
-            z-index: 1;
-        }
-
-        .video-earth {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-            transform: scale(1.02);
-            pointer-events: none;
-        }
-
-        .earth-inner-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(2,4,10,0.3) 0%, rgba(2,4,10,0.6) 80%);
-            z-index: 2;
-        }
-
-        /* SEU PONTO LUMINOSO MANTIDO */
-        .earth-star-glow {
-            position: absolute;
-            top: 30%;
-            left: 6%;
-            width: 12px;
-            height: 12px;
-            background: #ffffff;
-            border-radius: 50%;
             z-index: 5;
-            box-shadow: 0 0 25px 6px #ffffff, 0 0 50px 12px rgba(63, 137, 255, 0.9);
-            animation: pulseGlow 2.5s infinite ease-in-out;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 0.8; filter: brightness(1); }
-            50% { transform: scale(1.25); opacity: 1; filter: brightness(1.4); box-shadow: 0 0 35px 10px #ffffff, 0 0 65px 18px rgba(63, 137, 255, 1); }
-        }
-
-        /* CONTEÚDO TEXTUAL SOBREPOSTO EXATAMENTE COMO A IMAGEM */
-        .center-message-box {
-            position: absolute;
-            z-index: 4;
-            max-width: 850px;
-            padding: 0 25px;
+            max-width: 900px;
+            padding: 60px 20px;
             text-align: center;
+            margin: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
-        .center-message-box h1 {
-            font-size: 2.5rem;
+        .hero-title {
+            font-size: 3rem;
             font-weight: 800;
-            color: #fff;
-            line-height: 1.35;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0,0,0,1), 0 2px 5px rgba(0,0,0,0.8);
-            letter-spacing: -0.5px;
-            max-width: 750px;
+            line-height: 1.25;
+            color: #ffffff;
+            margin-bottom: 24px;
+            letter-spacing: -0.8px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
         }
 
-        .center-message-box h1 span {
-            color: #ffaa00;
+        .hero-title span {
+            color: #ff6b00; /* Laranja da imagem de referência */
         }
 
-        .center-message-box p {
-            font-size: 1.05rem;
-            color: #cbd5e1;
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            max-width: 720px;
             line-height: 1.6;
-            margin: 0 auto 35px;
-            max-width: 620px;
-            text-shadow: 0 2px 10px rgba(0,0,0,1);
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
         }
 
-        /* SEÇÃO DE SERVIÇOS BASEADA NO DOCUMENTO */
+        /* SEÇÃO DE SERVIÇOS (ENRIQUECIDA) */
         .services-section {
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 40px;
             z-index: 5;
+            background: #020617;
+            background-image: url('background-tech.png');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding: 100px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .services-title {
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-header {
             text-align: center;
-            font-size: 2.2rem;
+            margin-bottom: 60px;
+        }
+
+        .services-header h2 {
+            font-size: 2.3rem;
             font-weight: 800;
-            margin-bottom: 50px;
+            color: #ffffff;
+            margin-bottom: 16px;
             letter-spacing: -0.5px;
+        }
+
+        .services-header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 650px;
+            margin: 0 auto;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 30px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 35px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 170, 0, 0.3);
-            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-6px);
+            border-color: rgba(255, 107, 0, 0.4);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 107, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 107, 0, 0.1);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: #ff6b00;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            color: #ffaa00;
+            color: #ffffff;
+            margin-bottom: 14px;
         }
 
         .service-card p {
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #94a3b8;
             line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-features li::before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
         }
 
         /* FOOTER */
         footer {
-            background-color: #050811;
-            color: #64748b;
+            background-color: #02040a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
             text-align: center;
-            padding: 25px 20px;
-            font-size: 0.85rem;
-            width: 100%;
+            color: #64748b;
+            font-size: 0.9rem;
             position: relative;
-            z-index: 3;
-            border-top: 1px solid rgba(255,255,255,0.03);
-            margin-top: auto;
+            z-index: 5;
         }
 
-        /* RESPONSIVIDADE PARA CELULAR */
-        @media (max-width: 768px) {
+        /* RESPONSIVIDADE */
+        @media (max-width: 900px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
             header {
                 padding: 20px;
             }
             nav {
-                display: none;
-            }
-            .earth-sphere-wrapper {
-                width: 320px;
-                height: 320px;
-            }
-            .center-message-box h1 {
-                font-size: 1.6rem;
-            }
-            .center-message-box p {
-                font-size: 0.95rem;
-                margin-bottom: 20px;
-            }
-            .services-section {
-                padding: 40px 20px;
-            }
-            .services-title {
-                font-size: 1.75rem;
+                display: none; /* Esconde menu em telas pequenas */
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-wrapper">
+    <!-- HERO WRAPPER COM VÍDEO MP4 DA TERRA DE FUNDO -->
+    <div class="hero-wrapper">
+        
+        <!-- Vídeo da Terra no Fundo -->
+        <video class="video-bg-earth" autoplay loop muted playsinline poster="background-tech.png">
+            <source src="terra.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
 
-        <!-- CABEÇALHO DA NAVEGAÇÃO -->
+        <!-- Máscara de Degradê Escuro -->
+        <div class="hero-overlay"></div>
+
+        <!-- CABEÇALHO / NAVBAR -->
         <header>
+            <a href="#" class="logo-container">
+                <!-- Se tiver imagem logo.png usa aqui, senão texto estilizado -->
+                <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">YpHeroW<span>.ai</span></span>
+            </a>
+
+            <nav>
+                <a href="#servicos">Serviços</a>
+                <a href="#como-funciona">Como Funciona</a>
+            </nav>
+
+            <a href="https://wa.me/5531992516361?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito." target="_blank" class="btn-green">
+                Agendar Diagnóstico
+            </a>
+        </header>
+
+        <!-- CONTEÚDO DA MENSAGEM PRINCIPAL (IGUAL À IMAGEM) -->
+        <main class="hero-content">
+            <h1 class="hero-title">
+                Elimine tarefas manuais e otimize seus processos <span>escala suas vendas</span> com automação
+            </h1>
+
+            <p class="hero-subtitle">
+                Conectamos seu WhatsApp, CRM, e-mails e planilhas para sua equipe focar apenas no que gera faturamento.
+            </p>
+
+            <a href="https://wa.me/5531992516361?text=Olá!%20Quero%20agendar%20meu%20diagnóstico%20gratuito." target="_blank" class="btn-green btn-large">
+                Agendar Diagnóstico Gratuito
+            </a>
+        </main>
+
+        <div></div> <!-- Espaçador flexível -->
+    </div>
+
+    <!-- SEÇÃO DE SERVIÇOS (AUMENTANDO AS INFORMAÇÕES DO SITE) -->
+    <section id="servicos" class="services-section">
+        <div class="services-container">
+            <div class="services-header">
+                <h2>Soluções de Automação de Alto Impacto</h2>
+                <p>Implementamos ecossistemas inteligentes para transformar o fluxo comercial da sua empresa.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">⚡</div>
+                        <h3>Automação de Vendas & CRM</h3>
+                        <p>Integração total do seu pipeline de vendas. Cadastre leads automaticamente e atribua tarefas à sua equipe em tempo real.</p>
+                        <ul class="service-features">
+                            <li>Atribuição automática de leads</li>
+                            <li>Integração com ActiveCampaign, HubSpot e RD</li>
+                            <li>Notificações em tempo real no Slack/WhatsApp</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5500000000000?text=Tenho%20interesse%20em%20Automação%20de%20Vendas" target="_blank" class="btn-green" style="width: 100%; text-align: center;">Saiba Mais</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">💬</div>
+                        <h3>Agentes IA para WhatsApp</h3>
+                        <p>Atendimento inteligente 24/7 capaz de qualificar clientes, agendar reuniões e responder dúvidas com linguagem natural.</p>
+                        <ul class="service-features">
+                            <li>Qualificação automática de prospects</li>
+                            <li>Agendamento direto na sua agenda (Google/Outlook)</li>
+                            <li>Disparo de mensagens em massa personalizadas</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5531992516361?text=Tenho%20interesse%20em%20Agentes%20IA" target="_blank" class="btn-green" style="width: 100%; text-align: center;">Saiba Mais</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">📊</div>
+                        <h3>Sincronização de Dados e Relatórios</h3>
+                        <p>Elimine o trabalho manual de copiar e colar dados entre planilhas, ERPs e dashboards executivos.</p>
+                        <ul class="service-features">
+                            <li>Relatórios automáticos no Make/n8n</li>
+                            <li>Consolidação de dados em tempo real</li>
+                            <li>Eliminação de erros operacionais</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5531992516361?text=Tenho%20interesse%20em%20Sincronização%20de%20Dados" target="_blank" class="btn-green" style="width: 100%; text-align: center;">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 YpHeroW.ai / Orange Automation. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
