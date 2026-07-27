@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YpHeroW.ai</title>
     
+    <!-- Tag de Verificação do Google Search Console -->
     <meta name="google-site-verification" content="TK9kMJtPB0D58p_iiV2zznH7ZuK6tCFKPHv6nNZHjkg" />
     
+    <!-- Configuração de Compartilhamento para o WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.io">
     <meta property="og:title" content="YpHeroW.ai | Automações Inteligentes">
@@ -14,6 +16,7 @@
     <meta property="og:image" content="https://github.iologo.png">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Fontes e Estilos Base -->
     <link rel="preconnect" href="https://googleapis.com">
     <link href="https://googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
@@ -24,23 +27,29 @@
             overflow-x: hidden; color: #fff;
         }
 
-        /* Container que vai carregar a animação 3D da Terra */
+        /* Seção Hero com o vídeo terra.mp4 */
         .hero-section {
             position: relative; width: 100%; min-height: 100vh;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
-            box-sizing: border-box; padding: 0 20px;
-            background: #030712;
+            box-sizing: border-box; padding: 0 20px; overflow: hidden;
         }
 
-        /* Camada interativa do plano de fundo */
-        #vanta-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+        .video-bg {
+            position: absolute; top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover; z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.45); z-index: 2;
         }
 
         .hero-content {
-            position: relative; z-index: 2; max-width: 850px; margin-top: 40px;
-            pointer-events: auto;
+            position: relative; z-index: 3; max-width: 850px; margin-top: 40px;
         }
 
         .hero-content h1 {
@@ -59,6 +68,33 @@
             display: inline-block; transition: background 0.2s; border: none; cursor: pointer;
         }
         .btn-green:hover { background-color: #157347; }
+
+        /* NOVA SEÇÃO: Pré-Rodapé Criativo usando a imagem do mapa tech */
+        .pre-footer-tech {
+            position: relative; width: 100%; padding: 80px 20px;
+            background: url('background-tech.png') no-repeat center center;
+            background-size: cover; text-align: center; box-sizing: border-box;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        /* Camada escura comedida para suavizar o mapa e dar elegância */
+        .tech-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(3,7,18,1) 0%, rgba(3,7,18,0.75) 50%, rgba(7,10,19,1) 100%);
+            z-index: 1;
+        }
+
+        .tech-content {
+            position: relative; z-index: 2; max-width: 600px;
+        }
+
+        .tech-content h2 {
+            font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; color: #fff;
+        }
+
+        .tech-content p {
+            font-size: 1rem; color: #9ca3af; margin-bottom: 25px; line-height: 1.5;
+        }
 
         /* Janela Flutuante de Serviços */
         .modal-servicos {
@@ -87,13 +123,10 @@
 
         footer {
             background-color: #070a13; color: #667085; text-align: center;
-            padding: 20px; font-size: 0.85rem; width: 100%; box-sizing: border-box; position: relative; z-index: 2;
+            padding: 25px 20px; font-size: 0.85rem; width: 100%; box-sizing: border-box; position: relative; z-index: 3;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
     </style>
-
-    <!-- SCRIPTS EXPORTADOS PARA GENERAR A ANIMAÇÃO DA TERRA 3D -->
-    <script src="https://cloudflare.com"></script>
-    <script src="https://jsdelivr.net"></script>
 </head>
 <body>
 
@@ -107,14 +140,27 @@
         </nav>
     </header>
 
-    <!-- SEÇÃO HERO COM O ID DO PLANETA -->
+    <!-- SEÇÃO HERO COM SEU VÍDEO TERRA.MP4 -->
     <section class="hero-section">
-        <div id="vanta-bg"></div>
+        <video class="video-bg" autoplay loop muted playsinline>
+            <source src="terra.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <h1>Elimine tarefas manuais e otimize seus processos <span>para escalator suas vendas com automação</span></h1>
+            <h1>Elimine tarefas manuais e otimize seus processos <span>para escalar suas vendas com automação</span></h1>
             <p>Conectamos seu WhatsApp, CRM, e-mails e planilhas para sua equipe focar apenas no que gera faturamento.</p>
             <a href="#" class="btn-green" style="padding: 14px 28px; font-size: 1.05rem;">Agendar Diagnóstico Gratuito</a>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO INTEGRADA: PRÉ-RODAPÉ DIGITAL E MODERNO -->
+    <section class="pre-footer-tech">
+        <div class="tech-overlay"></div>
+        <div class="tech-content">
+            <h2>Pronto para escalar sua operação?</h2>
+            <p>Descubra como soluções personalizadas de engenharia de software e automação industrial podem impulsionar o seu negócio globalmente.</p>
+            <a href="#" class="btn-green" style="font-size: 0.95rem; padding: 12px 24px;">Falar com Especialista</a>
         </div>
     </section>
 
@@ -146,27 +192,13 @@
         </div>
     </div>
 
+    <!-- RODAPÉ FINAL -->
     <footer>
         &copy; 2026 YpHeroW. Todos os direitos reservados.
     </footer>
 
-    <!-- CONTROLE DO POP-UP E DA ANIMAÇÃO DA TERRA EM MOVIMENTO -->
+    <!-- LÓGICA DO POP-UP -->
     <script>
-        // Inicializa a animação digital da Terra ao carregar o site
-        VANTA.GLOBE({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x3f62ff, /* Cor das linhas da Terra */
-            color2: 0xffaa00, /* Cor das conexões secundárias */
-            backgroundColor: 0x30712 /* Fundo escuro azulado correspondente */
-        })
-
         function abrirServicos(e) {
             e.preventDefault();
             document.getElementById('modalServicos').style.display = 'flex';
@@ -181,4 +213,3 @@
         }
     </script>
 </body>
-</html>
